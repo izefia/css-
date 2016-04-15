@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>float</title>
+	<style>
+	    *,body{
+	    	margin: 0;
+	    	padding: 0;
+	    }
+	    .wrap{
+            width: 600px;
+            margin: auto;
+            padding:10px 0;
+	    }
+	    .clear{
+	    	/*添加到需要清除浮动的元素上*/
+	    	clear: both;
+	    	/*display: block;*/
+	    	overflow: hidden;
+	    }
+	    /*------------- @浮动元素的父元素 -------------*/
+	    /*解决父元素高度塌陷问题，自适应子元素高度*/
+	    .clearfix:after{
+	    	content: '';
+	    	height: 0; 
+	    	display: block;
+	    	clear: both;
+	    }
+	    /*兼容IE6,IE7*/
+	    .clearfix{
+	    	*zoom:1;
+	    }
+	    /*------------- @END THIS -------------*/
+
+	    .parent{
+	    	width: 400px;
+	    	background-color: yellow;
+	    	color: #fff;
+	    }
+	    .childFloat{
+	    	width: 100px;
+	    	height: 20px;
+	    	background-color: blue;
+	    }
+	    .normal{
+	    	width: 200px;
+	    	height: 20px;
+	    	background-color: green;
+	    }
+	    section{margin-top: 20px;}
+        .left{float: left;}
+	</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>关于FLOAT浮动属性</h1>
+    </header>
+    <article>
+        <section>
+    	    <p>left元素设置float:left属性，脱离文档流，normal元素向左浮动，部分位于left元素下方，但是文字不会被遮挡。</p>
+            <div class="parent">
+            	<div class="childFloat left">left</div>
+            	<div class="normal">normal</div>
+            </div>
+        </section>
+        <section>
+            <p>left元素设置float:left属性，脱离文档流，normal元素设置了clear属性清除浮动，位于本身与static的位置。</p>
+            <div class="parent">
+            	<div class="childFloat left">left</div>
+            	<div class="normal clear">normal</div>
+            </div>
+        </section>
+        <section class="clearfix">
+            <p>left和normal元素都设置float:left属性，均脱离文档流，包含他们的父元素高度塌陷。</p>
+            <div class="parent">
+            	<div class="childFloat left">left</div>
+            	<div class="normal left">normal</div>
+            </div>
+        </section>
+        <section>
+            <p class="clear">为父元素添加css类clearfix，解决高度塌陷问题</p>
+            <div class="parent clearfix">
+            	<div class="childFloat left">left</div>
+            	<div class="normal left">normal</div>
+            </div>
+        </section>
+        <section>
+            <h4>总结</h4>
+            <p>当一个元素设置了浮动，便脱离了文档流，父元素高度没有设置的情况下，高度会调整，失去包含的子元素的高度，后面的普通元素相应会占据空出来的文档流位置。而且，浮动元素虽然脱离了文档流，但是其内容仍占据位置，文档内容不会因为浮动而形成覆盖。</p>
+        </section>
+    </article>
+    
+</div>
+    
+</body>
+</html>
