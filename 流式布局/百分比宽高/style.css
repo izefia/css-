@@ -1,0 +1,77 @@
+/*- @reset style 
+------------------------------------------------*/
+*{
+	padding: 0;
+	margin: 0;
+}
+/*- @公共样式
+------------------------------------------------*/
+body{
+	width: 100%;
+	height: 100%;
+	font-family: Microsoft YaHei,STXihei,SimHei;
+	font-size: 16px;
+	color:#333;
+	line-height: 20px;
+	background-color: #66CCFF;
+}
+.wrap{
+	width: 80%;
+	margin: 30px auto;
+}
+.header{
+	width: 100%;
+	max-width: 380px;  /* 最大宽度，较好的显示效果*/
+	padding: 10px 0;
+	height: auto;
+	text-align: center;
+	position: relative;
+}
+.content{
+	width: 90%;
+	max-width: 600px;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 5%;
+}
+/*- @用百分比指定div宽高相等
+-------------------------------------------------*/
+/*缺点：无法设置文本元素垂直居中（vertical-align）*/
+.box{
+	width: 30%;    /*指定你需要的宽度*/
+	z-index: 101;
+	position: absolute;
+}
+.circle{
+	width: 100%;                /*宽度与box宽度相同*/
+	height: 0;                  /*高度要设置为0*/
+	padding-bottom: 100%;       /*用padding填充高度 =width*/
+	position: relative;         
+	border:5px solid #ffffff;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius: 50%;
+	overflow: hidden;	
+}
+.img{
+    width: 100%;    /*填充满circle域 */
+    height: 100%;    /*填充满circle域 */
+    background-color:  #ffff33;
+    position: absolute;
+	/*top:0;
+	left: 0;*/
+}
+/*以下无关*/
+#stuname{
+	width: 66%;
+	margin-left: 20%;
+}
+#stuname p{
+	width: 100%;
+	margin: 10% 0;
+	padding: 11% 0;
+	background-color: rgb(255,255,255);
+	background-color: rgba(255,255,255,0.8);
+	font-size: 20px;
+	border-radius: 5px;
+}
