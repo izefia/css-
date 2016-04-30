@@ -36,7 +36,6 @@ body{
 }
 /*- @用百分比指定div宽高相等
 -------------------------------------------------*/
-/*缺点：无法设置文本元素垂直居中（vertical-align）*/
 .box{
 	width: 30%;    /*指定你需要的宽度*/
 	z-index: 101;
@@ -66,12 +65,21 @@ body{
 	width: 66%;
 	margin-left: 20%;
 }
-#stuname p{
+#stuname div{
 	width: 100%;
 	margin: 10% 0;
-	padding: 11% 0;
+	height: 0;
+	padding-bottom: 33.33%;
+	position: relative;
 	background-color: rgb(255,255,255);
-	background-color: rgba(255,255,255,0.8);
-	font-size: 20px;
+	background-color: rgba(255,255,255,0.8);	
 	border-radius: 5px;
+}
+#stuname p{
+	width: 100%;
+	font-size: 18px;
+	line-height: 18px;
+	position: absolute;
+	top:50%;
+	margin-top: -9px;
 }
